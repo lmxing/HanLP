@@ -31,7 +31,7 @@ public class TextRankSentenceTest
 		List<String> oldSum = HanLP.extractSummary(str, 2);
 		List<String> newSum = HanLP.extractSummary(str, 2, separator);
 //		System.out.println("exctractSummay old:" + oldSum);
-//		System.out.println("exctractSummay new:" + newSum);
+		System.out.println("exctractSummay new:" + newSum);
 		
 		assertTrue(oldSum.toString().length() < newSum.toString().length());
 		assertFalse(oldSum.toString().contains("，"));
@@ -46,7 +46,7 @@ public class TextRankSentenceTest
 		String newSum = HanLP.getSummary(str, 100, separator);
 		
 //		System.out.println("getSummay old:" + oldSum);
-//		System.out.println("getSummay new:" + newSum);
+		System.out.println("getSummay new:" + newSum);
 		
 		assertFalse(oldSum.contains("，"));
 		assertTrue(newSum.contains("，"));

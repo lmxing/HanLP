@@ -9,8 +9,9 @@ public class PinyinKeyTest extends TestCase
     {
         PinyinKey pinyinKeyA = new PinyinKey("专题分析");
         PinyinKey pinyinKeyB = new PinyinKey("教室资格");
-//        System.out.println(pinyinKeyA);
-//        System.out.println(pinyinKeyB);
+        System.out.println(pinyinKeyA);
+        System.out.println(pinyinKeyB);
         assertEquals(1, LongestCommonSubstring.compute(pinyinKeyA.getFirstCharArray(), pinyinKeyB.getFirstCharArray()));
+        System.out.println(LongestCommonSubstring.compute(pinyinKeyA.getFirstCharArray(), pinyinKeyB.getFirstCharArray()));
     }
 }

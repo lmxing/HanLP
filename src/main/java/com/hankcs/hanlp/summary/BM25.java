@@ -91,16 +91,18 @@ public class BM25
                 freq = (freq == null ? 0 : freq) + 1;
                 tf.put(word, freq);
             }
-            f[index] = tf;
+            f[index] = tf; // index 文档，各个词出现的频数
             for (Map.Entry<String, Integer> entry : tf.entrySet())
             {
                 String word = entry.getKey();
                 Integer freq = df.get(word);
                 freq = (freq == null ? 0 : freq) + 1;
-                df.put(word, freq);
+                df.put(word, freq); // 文档中全部词语与出现在几个句子中
             }
-            ++index;
+            ++index; // 下一个文档
         }
+        //  逆文档频率（IDF）是一个词语普遍重要性的度量。
+        // 某一特定词语的IDF，可以由总文件数目除以包含该词语之文件的数目，再将得到的商取对数得到
         for (Map.Entry<String, Integer> entry : df.entrySet())
         {
             String word = entry.getKey();
@@ -108,15 +110,17 @@ public class BM25
             idf.put(word, Math.log(D - freq + 0.5) - Math.log(freq + 0.5));
         }
     }
-
+/*
+ * index 文档 和  sentence 的 bm25
+ */
     public double sim(List<String> sentence, int index)
     {
         double score = 0;
         for (String word : sentence)
         {
             if (!f[index].containsKey(word)) continue;
-            int d = docs.get(index).size();
-            Integer wf = f[index].get(word);
+            int d = docs.get(index).size(); // index 文档包括词 的个数
+            Integer wf = f[index].get(word); // index 文档中 word 词 出现的个数
             score += (idf.get(word) * wf * (k1 + 1)
                     / (wf + k1 * (1 - b + b * d
                                                 / avgdl)));
@@ -124,7 +128,9 @@ public class BM25
 
         return score;
     }
-
+/*
+ * sentence 与语料库中所有文档的 bm25
+ */
     public double[] simAll(List<String> sentence)
     {
         double[] scores = new double[D];

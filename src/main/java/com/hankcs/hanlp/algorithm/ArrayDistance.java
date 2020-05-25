@@ -26,7 +26,9 @@ public class ArrayDistance
         Long[] arrayB = setB.toArray(new Long[0]);
        return computeMinimumDistance(arrayA, arrayB);
     }
-
+/*
+ 升序数组中找到其中元素最接近的两个元素的差绝对值
+ */
     public static Long computeMinimumDistance(Long[] arrayA, Long[] arrayB)
     {
         int aIndex = 0;
@@ -54,7 +56,9 @@ public class ArrayDistance
 
         return min;
     }
-
+/*
+ * 计算两个数组平均值的距离
+ */
     public static Long computeAverageDistance(Long[] arrayA, Long[] arrayB)
     {
         Long totalA = 0L;

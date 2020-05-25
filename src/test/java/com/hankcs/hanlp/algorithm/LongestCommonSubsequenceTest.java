@@ -9,6 +9,7 @@ public class LongestCommonSubsequenceTest extends TestCase
     public void testCompute() throws Exception
     {
         assertEquals(5, LongestCommonSubsequence.compute(a, b));
+        System.out.println(LongestCommonSubsequence.compute(a, b));
     }
 
 }

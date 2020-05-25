@@ -19,11 +19,13 @@ public class ISuggesterTest extends TestCase
         {
             suggester.addSentence(title);
         }
+        System.out.println();
 
         assertEquals(true, suggester.suggest("mayun", 1).size() > 0);
+        System.out.println(suggester.suggest("mayun", 2));
 
-        suggester.removeAllSentences();
-
-        assertEquals(0, suggester.suggest("mayun", 1).size());
+    //    suggester.removeAllSentences();
+        System.out.println(suggester.suggest("英报告说空气污染带来", 2));
+      //  assertEquals(0, suggester.suggest("mayun", 1).size());
     }
 }

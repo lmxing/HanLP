@@ -14,7 +14,7 @@ public class DijkstraSegmentTest extends SegmentTestCase
         Segment segment = new DijkstraSegment();
         List<Term> termList = segment.seg("好像向你借钱的人跑了");
         assertNoNature(termList, Nature.nr);
-//        System.out.println(termList);
+        System.out.println(termList);
     }
 
     public void testIssue770() throws Exception
@@ -22,7 +22,9 @@ public class DijkstraSegmentTest extends SegmentTestCase
 //        HanLP.Config.enableDebug();
         Segment segment = new DijkstraSegment();
         List<Term> termList = segment.seg("为什么我扔出的瓶子没有人回复？");
-//        System.out.println(termList);
+        System.out.println(termList);
         assertSegmentationHas(termList, "瓶子 没有");
+        List<Term> termsList1 = segment.seg("北京金百万烤鸭店");
+        System.out.println(termsList1);
     }
 }

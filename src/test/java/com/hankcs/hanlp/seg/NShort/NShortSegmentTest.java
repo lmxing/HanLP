@@ -24,10 +24,10 @@ public class NShortSegmentTest extends TestCase
         wordResults.add(NShortSegment.parse("12点半"));
         wordResults.add(NShortSegment.parse("1.abc"));
 
-//        for (List<Term> result : wordResults)
-//        {
-//            System.out.println(result);
-//        }
+        for (List<Term> result : wordResults)
+        {
+            System.out.println(result);
+        }
     }
 
     public void testIssue691() throws Exception

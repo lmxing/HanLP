@@ -55,8 +55,8 @@ public class ViterbiTest extends TestCase
         int[] result = Viterbi.compute(observations, states, start_probability, transititon_probability, emission_probability);
         for (int r : result)
         {
-//            System.out.print(Weather.values()[r] + " ");
+            System.out.print(Weather.values()[r] + " ");
         }
-//        System.out.println();
+        System.out.println();
     }
 }

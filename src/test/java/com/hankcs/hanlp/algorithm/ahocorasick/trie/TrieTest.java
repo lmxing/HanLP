@@ -25,9 +25,11 @@ public class TrieTest extends TestCase
         }
         Trie trie = new Trie();
         trie.addAllKeyword(map.keySet());
+        System.out.print(trie.toString());
         for (String key : keyArray)
         {
-            assertTrue(trie.hasKeyword(key));
+            //assertTrue(trie.hasKeyword(key));
+            System.out.print(trie.hasKeyword(key));
         }
         assertTrue(trie.hasKeyword("ushers"));
         assertFalse(trie.hasKeyword("构建耗时"));
@@ -56,7 +58,7 @@ public class TrieTest extends TestCase
             @Override
             public void hit(int begin, int end, String value)
             {
-//                System.out.printf("[%d:%d]=%s\n", begin, end, value);
+                System.out.printf("[%d:%d]=%s\n", begin, end, value);
                 assertEquals(value, text.substring(begin, end));
             }
         });
